@@ -22,6 +22,7 @@
 .document-aside>.interactive-island{grid-column:1/-1}.document-aside>.interactive-island .button{margin-top:18px}
 
 /* Progressive enhancement: panels and filters. */
-+[hidden]{display:none!important}
-+.document-aside>a.button{grid-column:1/-1}
-+
+[hidden] { display: none !important; }
+.document-aside>a.button { grid-column: 1/-1; }
+.day-controls { align-items: center; }
+.day-counter { font-size: 11px; color: var(--muted); white-space: nowrap; margin-right: 5px; font-variant-numeric: tabular-nums; }

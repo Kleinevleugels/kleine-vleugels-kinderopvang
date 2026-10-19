@@ -60,7 +60,7 @@ function setupTabs(container, buttonSelector, panelSelector) {
       button.classList.toggle('active', active);
       panels[i].hidden = !active;
     });
-    if (focus) buttons[current].focus();
+    if (focus) buttons[current].focus({ preventScroll: true });
   }
   buttons.forEach((button, index) => {
     button.addEventListener('click', () => show(index));
@@ -76,7 +76,12 @@ function setupTabs(container, buttonSelector, panelSelector) {
     });
   });
   container.querySelectorAll('[data-day-step]').forEach(button => {
-    button.addEventListener('click', () => show(current + Number(button.dataset.dayStep), true));
+    button.addEventListener('click', () => {
+      const step = Number(button.dataset.dayStep);
+      show(current + step);
+      const nextButton = panels[current].querySelector('[data-day-step="' + step + '"]');
+      nextButton?.focus({ preventScroll: true });
+    });
   });
   show(0);
 }
