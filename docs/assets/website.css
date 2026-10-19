@@ -21,4 +21,7 @@
 
 .document-aside>.interactive-island{grid-column:1/-1}.document-aside>.interactive-island .button{margin-top:18px}
 
-.static-menu{display:none}.static-calculator{padding:32px;background:var(--paper);border:1px solid var(--line);border-radius:15px}.static-calculator h3{font-family:var(--serif);font-size:32px;margin:14px 0}.static-calculator table{width:100%;border-collapse:collapse;margin:24px 0;font-variant-numeric:tabular-nums}.static-calculator th,.static-calculator td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left}.static-calculator th{color:var(--teal)}.static-age details,.static-day details{margin-bottom:12px}.static-age ul{padding-left:20px}.static-menu-links a{display:block;padding:12px 20px}.static-menu-links .button{margin:8px 20px}.static-menu>summary{cursor:pointer;padding:8px;font-size:14px}.static-menu-links{background:var(--cream);position:absolute;right:0;top:100%;left:0;box-shadow:0 10px 15px #18374620;padding:12px;z-index:60}@media(max-width:760px){.static-menu{display:block;margin-left:auto}.nav-wrap{position:relative}.static-calculator{padding:20px}.static-calculator th,.static-calculator td{font-size:12px;padding:10px 5px}}
+/* Progressive enhancement: panels and filters. */
++[hidden]{display:none!important}
++.document-aside>a.button{grid-column:1/-1}
++
