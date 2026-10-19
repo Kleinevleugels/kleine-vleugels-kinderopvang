@@ -1,0 +1,4 @@
+import { sqliteTable,text,integer,index } from "drizzle-orm/sqlite-core";
+export const interests=sqliteTable("interests",{
+  id:text("id").primaryKey(),reference:text("reference").notNull().unique(),deleteHash:text("delete_hash").notNull(),name:text("name").notNull(),email:text("email").notNull(),phone:text("phone").notNull().default(""),postcode:text("postcode_area").notNull().default(""),district:text("district").notNull().default(""),age:text("age_stage").notNull(),preferredDays:text("preferred_days").notNull(),startMonth:text("start_month").notNull().default(""),consentVersion:text("consent_version").notNull(),createdAt:integer("created_at").notNull(),expiresAt:integer("expires_at").notNull(),
+},table=>[index("interests_email_created_idx").on(table.email,table.createdAt),index("interests_expiry_idx").on(table.expiresAt)]);

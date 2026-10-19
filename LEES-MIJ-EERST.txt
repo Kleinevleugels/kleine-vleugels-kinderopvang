@@ -1,0 +1,7 @@
+KLEINE VLEUGELS KINDEROPVANG
+
+Pak het ZIP-bestand uit. In de map kleine-vleugels staan de broncode, het logo, afbeeldingen en alle pagina’s.
+
+Voor GitHub: upload de uitgepakte bestanden, niet alleen het ZIP-bestand. Lees README.md voor de stappen.
+
+De website is een React/Vinext-project. Voor lokaal openen zijn Node.js en pnpm nodig. Voor de werkende interesselijst is een server met database nodig. Er staan geen ingevulde klantgegevens in dit pakket.
