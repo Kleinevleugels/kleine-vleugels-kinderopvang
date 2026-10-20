@@ -1,83 +1,47 @@
-# Kleine Vleugels Kinderopvang
+# Kleine Vleugels Kinderopvang — complete website voor GitHub
 
-Websiteproject voor Kleine Vleugels, dagopvang voor kinderen van 0 tot 4 jaar in Amsterdam. Dit pakket bevat de versie met het gekozen vogellogo, Lora-koppen met een normale J en afbeeldingen met hun oorspronkelijke verhoudingen.
+Dit pakket bevat de volledige openbare website. De map `docs` bevat alle pagina’s, JavaScript, stijlen, lettertypen, afbeeldingen en tien beleidsdownloads. Je kunt alles uit deze ZIP in één keer uploaden.
 
-## Inhoud
+## Uploaden vanaf het scherm met de repositorybestanden
 
-- 20 pagina’s, inclusief tien beleids- en protocolonderwerpen.
-- Interactieve leeftijdskeuze, dagindeling, vraagzoeker en bruto kostenvoorbeeld.
-- Een interesseformulier met servervalidatie, databaseopslag en verwijderen met een persoonlijke code.
-- Het definitieve logo, sfeerbeeld en lokaal geladen lettertypen.
-- Geen ingevulde aanvragen, database-inhoud, wachtwoorden of toegangstokens.
+1. Pak de ZIP uit op je computer en open de uitgepakte map.
+2. Daar zie je precies twee onderdelen: de map **docs** en dit bestand **README.md**.
+3. Open https://github.com/KleineVleugels/kleine-vleugels-kinderopvang en ga naar **Code**, op het hoogste niveau van de repository. Je ziet daar bijvoorbeeld `package.json` en de mappen `app`, `public` en `docs`.
+4. Kies **Add file > Upload files**. Sleep **docs én README.md samen** naar het uploadvak. Sleep niet het ZIP-bestand en niet de bovenliggende uitgepakte map.
+5. Controleer in de uploadlijst dat je onder andere `docs/index.html`, `docs/beleid/index.html`, `docs/assets/interactief.js` en `docs/CNAME` ziet. Het mag geen `docs/docs/index.html` of extra map met de naam van de ZIP worden.
+6. Schrijf als omschrijving bijvoorbeeld **Complete website en tien beleidsstukken**. Kies **Commit directly to main** en klik **Commit changes**.
+7. Open **Actions** en wacht op een geslaagde Pages-publicatie.
+8. Open https://kleinevleugels.nl/beleid/ en druk op **Ctrl + F5**. Op de nieuwe pagina staat bovenaan: “Onze tien beleidsstukken beschrijven…” De kaartjes tonen **Beleid** en de links heten **Lees het beleid**.
 
-## Uploaden naar GitHub
+## Instellingen behouden
 
-1. Pak dit ZIP-bestand uit.
-2. Maak op GitHub een nieuwe repository, bijvoorbeeld `kleine-vleugels`.
-3. Upload de **uitgepakte projectbestanden**, zodat `package.json`, `app/` en `public/` direct in de hoofdmap van je repository staan. Upload niet alleen het ZIP-bestand.
-4. Voor het complete project is uploaden met Git of GitHub Desktop het handigst; daarmee gaan ook bestanden zoals `.gitignore` en `.openai/hosting.json` mee.
+**Settings > Pages** blijft: **Deploy from a branch**, branch **main**, folder **/docs**. Het eigen domein blijft **kleinevleugels.nl** en **Enforce HTTPS** blijft aan. De domeinkoppeling staat ook in `docs/CNAME`; dat bestand wordt meegeüpload. DNS en Google Search Console hoef je voor deze update niet opnieuw in te stellen.
 
-Met Git, vanuit de uitgepakte projectmap:
+## Waarom alleen docs de website bepaalt
 
-```sh
-git init
-git add .
-git commit -m "Eerste versie Kleine Vleugels"
-git branch -M main
-git remote add origin https://github.com/JOUW-GEBRUIKERSNAAM/kleine-vleugels.git
-git push -u origin main
-```
+De andere mappen zijn bronbestanden van de eerdere ontwikkelversie. Bij publicatie uit `main /docs` gebruikt GitHub Pages de inhoud van `docs` voor de website. De nieuwe map is dus geen gedeeltelijke update: alle onderdelen van de openbare website zitten erin. De andere mappen kunnen blijven staan. Deze ZIP actualiseert de openbare website, niet de oorspronkelijke ontwikkelcode buiten docs.
 
-Vervang de voorbeeld-URL door de URL van je eigen repository.
+Bestanden met hetzelfde pad worden bij upload bijgewerkt. Bestanden die je niet opnieuw uploadt, worden niet automatisch gewist. Dit pakket bevat ook `docs/images/samen-ontdekken.webp`: onder die oude bestandsnaam staat nu een verliesloos omgezet exemplaar van het nieuwe AI-sfeerbeeld. Zo wordt ook de oude afbeelding overschreven en hoef je die niet apart te verwijderen.
 
-## Lokaal starten
+## Inhoud en werking
 
-Benodigd: Node.js 22.13 of nieuwer en pnpm 11.25.0. Open een terminal in de projectmap.
+- Alle tien beleidsstukken en bijpassende tekstdownloads.
+- De drie leeftijdsgroepen: baby’s 0–1 jaar, dreumesen 1–2 jaar en peuters 2–4 jaar.
+- Afgestemde teksten over wennen, mentorschap, twee ontwikkelingsgesprekken per jaar, slaap en rust, verzorging, voeding, veiligheid, privé-updates, klachten en ophalen.
+- Mobiel menu, leeftijdstabs, dagritme met pijlen en toetsenbordbediening, zoekfuncties, filters, downloads en bruto rekentool.
+- Het gekozen vogellogo, de bestaande kleuren en lettertypen.
+- Het nieuwe AI-sfeerbeeld, zichtbaar als illustratie aangeduid, zonder echte kindfoto’s als invoer.
+- Het eigen domein, relatieve paden, sitemap en zoekmachine-instellingen.
 
-```sh
-npm install -g pnpm@11.25.0
-pnpm install --frozen-lockfile
-pnpm dev
-```
+Het aanmeldformulier en de automatische ontvangstmail zijn nog niet aangesloten. De rekentool gebruikt een aanpasbaar voorbeeldtarief. Menu, tariefinclusies, openingsweken en een eventuele vergoeding bij herhaald te laat ophalen blijven open. Adres, openingsdatum, capaciteit en registratie moeten nog worden bevestigd.
 
-Open het lokale adres dat in de terminal verschijnt, normaal `http://localhost:5173`. Dit is een React/Vinext-project en werkt niet door alleen een HTML-bestand dubbel aan te klikken.
+## Controle en status
 
-### Lokale database voor het formulier
+De website-inhoud en interactieve onderdelen zijn eerder technisch gecontroleerd. De bestandsstructuur, domeinbestand, volledige inhoud en ZIP-integriteit van dit uploadpakket zijn opnieuw gecontroleerd. De AI-afbeelding onder de oude bestandsnaam heeft na decoderen dezelfde pixels als het nieuwe PNG-beeld. Een visuele browsertest was in de maakomgeving niet beschikbaar.
 
-De bestaande online database zit niet in dit pakket. Maak voor lokale tests een nieuwe database met het meegeleverde schema:
+Dit pakket uploadt of verwijdert zelf niets in je GitHub-account. De wijzigingen worden pas openbaar na jouw upload en een geslaagde Pages-publicatie.
 
-```sh
-pnpm build
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_thin_gauntlet.sql
-pnpm dev
-```
+## Officiële GitHub-uitleg
 
-De lokale opslag is gescheiden van de online interesselijst.
-
-## Hosting
-
-GitHub bewaart de code. Voor de werkende website is hosting nodig die de server en database ondersteunt. De huidige toepassing gebruikt een Cloudflare Worker en D1 met binding `DB`. Alleen GitHub Pages kan deze serverfuncties niet uitvoeren.
-
-Bij eigen hosting moet een nieuwe D1-database worden gekoppeld en de SQL-migratie worden toegepast. Gebruik geen echte oudergegevens voor tests. Er is geen automatische e-maildienst gekoppeld. De `.openai/hosting.json` verwijst naar het bestaande Sites-project; dat is een projectidentificatie, geen wachtwoord en geen zelfstandige koppeling met jouw eigen hosting. De privétoegang van de huidige online website wordt niet automatisch overgenomen naar een andere host.
-
-## Waar pas je iets aan?
-
-- `app/page.tsx`: homepage.
-- `app/[page]/page.tsx`: overige hoofdpagina’s.
-- `app/beleid/[slug]/page.tsx`: individuele beleidsonderwerpen.
-- `app/components/`: menu, formulier en interactieve onderdelen.
-- `app/brand.css`: kleuren, lettertypen en mobiele vormgeving.
-- `lib/content.ts`: leeftijdsteksten, vragen en beleidsinhoud.
-- `app/api/interesse/route.ts`: opslaan en verwijderen van interesseaanvragen.
-- `db/schema.ts` en `drizzle/`: databaseschema en migratie.
-- `public/images/`: definitief logo en sfeerbeeld.
-- `BRAND.md`: vastgelegde huisstijl en keuzes.
-- `REDACTIE.md`: bronnen en nog in te vullen bedrijfsinformatie.
-
-## Status van de inhoud
-
-Amsterdam is de voorlopige vestigingsstad. De opvang is in voorbereiding. Adres, opening, team, tarieven, registratie en definitieve protocollen zijn nog niet vastgesteld. Bewaar die conceptstatus totdat de gegevens daadwerkelijk bekend zijn.
-
-## Controle van deze versie
-
-De productiebuild van de huidige versie is geslaagd. De formulieropslag en verwijdering zijn bij de eerdere oplevering online gecontroleerd. Er is geen nieuwe installatie op een andere computer of andere hosting getest.
+- https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
+- https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
