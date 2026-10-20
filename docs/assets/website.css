@@ -28,3 +28,10 @@
 .illustration-figure .image-caption { margin-top: 9px; }
 .day-controls { align-items: center; }
 .day-counter { font-size: 11px; color: var(--muted); white-space: nowrap; margin-right: 5px; font-variant-numeric: tabular-nums; }
+
+/* Readable policy downloads: override sidebar link colours in all states. */
+.document-aside > a.policy-download,.document-aside > a.policy-download:visited{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;box-sizing:border-box;min-height:48px;padding:13px 18px;margin-top:20px;border:1px solid #376e68;border-radius:12px;background:#376e68;color:#fff;font-size:14px;font-weight:700;line-height:1.4;text-decoration:none;}
+.document-aside > a.policy-download:hover{background:#28544f;border-color:#28544f;color:#fff;}
+.document-aside > a.policy-download:focus-visible{background:#28544f;color:#fff;outline:3px solid #e99b58;outline-offset:4px;}
+.document-aside > a.policy-download span{color:inherit;}
+.document-aside > a.policy-download svg{color:inherit;stroke:currentColor;flex-shrink:0;}
