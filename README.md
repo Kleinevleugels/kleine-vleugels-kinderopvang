@@ -1,28 +1,40 @@
-# Kleine Vleugels - contact via Web3Forms
+# Kleine Vleugels — versie 15
 
-Versie 14. Deze overstap vervangt de eerdere formulierdienst door Web3Forms. Ouders vullen ons eigen formulier in en gaan na bevestigde verwerking naar onze eigen bedankpagina.
+Deze volledige website bevat het werkende Web3Forms-contactformulier uit versie 14 en de nieuwe instellingen voor herkenbaarheid in Google.
 
-## Uploaden naar GitHub
+## Uploaden
 
-De koppeling bevat jullie publieke Web3Forms-access key. Die sleutel is een openbaar formulier-ID voor de ontvangst van berichten, geen geheime serversleutel. De ontvangende mailbox wordt in jullie Web3Forms-account beheerd.
+1. Pak deze ZIP uit.
+2. Open de hoofdmap van https://github.com/KleineVleugels/kleine-vleugels-kinderopvang.
+3. Upload de map docs en README.md over de bestaande bestanden via Add file > Upload files. Vooraf wissen is niet nodig.
+4. Klik Commit changes en wacht tot GitHub Pages de website heeft gepubliceerd.
 
-1. Pak de ZIP uit.
-2. Open https://github.com/KleineVleugels/kleine-vleugels-kinderopvang en ga naar het hoogste niveau, waar docs en README.md staan.
-3. Kies Add file > Upload files en upload de map docs en README.md over de bestaande bestanden. Verwijderen vooraf is niet nodig.
-4. Kies Commit changes en wacht tot GitHub Pages klaar is met publiceren.
-5. Open https://kleinevleugels.nl/contact/ en vernieuw de pagina volledig. Verstuur een testbericht en controleer de bedankpagina en ontvangst in Gmail, ook bij spam.
+GitHub Pages blijft ingesteld op main /docs. Het domein en HTTPS veranderen niet.
 
-Publicatie blijft main /docs. Het domein en HTTPS blijven gelijk. Dit ZIP-bestand bevat de volledige website, inclusief het logo, de afbeeldingen en de tien beleids-PDF's.
+## Daarna in Google Search Console
 
-## Werking
+De al aangemelde sitemap is https://kleinevleugels.nl/sitemap.xml. Als de status Succesvol is, laat die bestaande vermelding staan. Dezelfde URL bevat nu de actuele lijst met 21 indexeerbare pagina's. Bedankpagina's en de foutpagina zijn uitgesloten.
 
-De website verstuurt via de gedocumenteerde JSON-API. Er is één verzendknop. De bevestiging opent alleen na een positief antwoord van de dienst. Bij een fout blijven de gegevens staan en verschijnt een directe maillink. Er is geen automatische herhaalde verzending en geen route naar de oude formulierdienst. Er wordt niets verstuurd bij het openen van de pagina. Zonder JavaScript kan het ingestelde formulier rechtstreeks posten en terugkeren naar onze bedankpagina.
+1. Plak https://kleinevleugels.nl/ in de URL-inspectiebalk bovenaan.
+2. Klik Live URL testen. Controleer dat de pagina bereikbaar en indexeerbaar is.
+3. Klik Indexering aanvragen.
+4. Vraag eventueel ook indexering aan voor de sterk gewijzigde contact- en privacypagina. Dagelijks dezelfde URL opnieuw aanvragen versnelt het crawlen niet.
+5. Geef Google enkele dagen tot weken om titel, sitenaam en icoon bij te werken. Google bepaalt zelf de uiteindelijke weergave en positie. Een korte verwerkingsmelding in het rapport Pagina's is op zichzelf geen bewijs van een fout.
 
-Het gratis plan ondersteunt 250 inzendingen per maand. De bevestiging aan ouders staat op het scherm; automatisch antwoorden per e-mail is een betaalde extra en is hier niet ingeschakeld. Controleer in het dashboard ook de gewenste bewaartermijn. De privacypagina noemt de nieuwe dienst.
+De homepage verwijst naar een stabiel, vierkant vogelicoontje: https://kleinevleugels.nl/favicon.png (192 x 192). Er is ook een favicon.ico en een Apple-icoon. Het oorspronkelijke logo met woordmerk is behouden. De favicon is een vereenvoudigde vectorvariant voor kleine formaten. De homepage bevat WebSite-gegevens voor de gewenste sitenaam en Organization-gegevens met de bestaande naam, website, e-mail en het logo. Er zijn geen fictieve adressen of locaties toegevoegd.
 
-Technische controles dekken de verzendroute, benodigde configuratie, succes- en foutafhandeling, dubbele klikken, spamveld en bestandsverwijzingen. Op 21 oktober 2026 accepteerde Web3Forms een echt testbericht met jullie sleutel (HTTP 200, success true). Het onderwerp is "Test nieuw contactformulier Kleine Vleugels". Dit bewijst acceptatie door de dienst; ontvangst in Gmail moet door ons worden gecontroleerd. Een visuele browsertest was in de maakomgeving niet beschikbaar. Controleer daarom na de upload ook de verzending vanaf de gepubliceerde website.
+Voor vindbaarheid op algemene lokale zoekopdrachten zijn later ook inhoudelijke pagina's over de bevestigde locaties en een Google Bedrijfsprofiel met de werkelijke bedrijfsgegevens van belang. Dit pakket maakt geen claim over een gegarandeerde positie in Google.
 
-Officiële informatie:
-https://web3forms.com/pricing
-https://docs.web3forms.com/getting-started/installation
-https://docs.web3forms.com/getting-started/faq
+## Contactformulier
+
+Web3Forms is ingesteld met jullie publieke formulierkey. Het echte testbericht is door de dienst geaccepteerd; de ontvangen Gmail-testmail is op 21 oktober 2026 door ons bevestigd. Ouders gaan na positieve verwerking naar onze eigen bedankpagina. Bij een fout blijven de ingevulde gegevens staan en verschijnt een directe maillink. Dit pakket wijzigt het werkende verzendscript niet. Controleer na upload nog eenmaal het formulier vanaf de openbare website.
+
+## Controles
+
+De faviconformaten, alle lokale verwijzingen, de sitemap, canonical-URL's, metadata en JSON-LD zijn gecontroleerd. Het verzendscript, de publieke formulierkey, beleids-PDF's, fonts, logo en inhoudelijke pagina's zijn behouden. De favicon is als afbeelding visueel gecontroleerd. Een volledige live browsertest was in de maakomgeving niet beschikbaar; de openbare domeinnaam kon hier tijdens deze controle niet worden opgehaald.
+
+Officiële Google-uitleg:
+https://developers.google.com/search/docs/appearance/favicon-in-search
+https://developers.google.com/search/docs/appearance/site-names
+https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap

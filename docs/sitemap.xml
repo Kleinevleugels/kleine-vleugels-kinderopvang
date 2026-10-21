@@ -1,10 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kleinevleugels.nl/beleid/hygiene/</loc>
+    <loc>https://kleinevleugels.nl/</loc>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://kleinevleugels.nl/beleid/</loc>
+  </url>
+  <url>
+    <loc>https://kleinevleugels.nl/beleid/hygiene/</loc>
   </url>
   <url>
     <loc>https://kleinevleugels.nl/beleid/klachten-en-inspraak/</loc>
@@ -34,10 +38,12 @@
     <loc>https://kleinevleugels.nl/beleid/ziekte-en-medicijnen/</loc>
   </url>
   <url>
-    <loc>https://kleinevleugels.nl/contact/</loc>
+    <loc>https://kleinevleugels.nl/betalingen/</loc>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
-    <loc>https://kleinevleugels.nl/</loc>
+    <loc>https://kleinevleugels.nl/contact/</loc>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://kleinevleugels.nl/opvang/</loc>
@@ -53,6 +59,7 @@
   </url>
   <url>
     <loc>https://kleinevleugels.nl/privacy/</loc>
+    <lastmod>2026-10-21</lastmod>
   </url>
   <url>
     <loc>https://kleinevleugels.nl/tarieven/</loc>
@@ -60,4 +67,4 @@
   <url>
     <loc>https://kleinevleugels.nl/veelgestelde-vragen/</loc>
   </url>
-<url><loc>https://kleinevleugels.nl/betalingen/</loc><lastmod>2026-10-21</lastmod></url></urlset>
+</urlset>
