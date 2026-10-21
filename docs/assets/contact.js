@@ -1,98 +1,60 @@
-// Kleine Vleugels: contactformulier voor de statische GitHub Pages-website.
-// Berichten gaan uitsluitend na verzenden via FormSubmit naar de opvang.
+// Kleine Vleugels: normale formulierverzending naar FormSubmit.
+// De browser verzorgt de POST en de formulierdienst bevestigt de verwerking.
+// Deze code valideert de invoer en voorkomt dubbel klikken; zij verzendt niets zelf.
 export const CONTACT_EMAIL = 'Kleinevleugels@gmail.com';
-const AJAX_URL = 'https://formsubmit.co/ajax/' + CONTACT_EMAIL;
 
-export function setupContactForm(form, send = globalThis.fetch?.bind(globalThis)) {
+export function setupContactForm(form) {
   const button = form.querySelector('button[type="submit"]');
   const label = form.querySelector('[data-submit-label]');
   const status = form.querySelector('#contact-status');
-  const card = form.closest('.contact-card');
-  const success = card?.querySelector('[data-contact-success]');
-  const again = card?.querySelector('[data-contact-again]');
-  if (!button || !label || !status || !success || typeof send !== 'function') return;
+  if (!button || !label || !status || form.dataset.contactReady) return;
+  form.dataset.contactReady = 'true';
   let pending = false;
 
-  function setPending(value) {
-    pending = value;
-    button.disabled = value;
-    form.setAttribute('aria-busy', String(value));
-    label.textContent = value ? 'Bericht versturen…' : 'Verstuur bericht';
+  function resetState() {
+    pending = false;
+    button.disabled = false;
+    form.setAttribute('aria-busy', 'false');
+    label.textContent = 'Verstuur bericht';
+    status.hidden = true;
+    status.replaceChildren();
   }
 
-  function showError(message) {
-    status.replaceChildren(document.createTextNode(message + ' Je kunt ook mailen naar '));
-    const link = document.createElement('a');
-    link.href = 'mailto:' + CONTACT_EMAIL;
-    link.textContent = CONTACT_EMAIL;
-    status.append(link, document.createTextNode('.'));
-    status.dataset.state = 'error';
-    status.hidden = false;
-  }
+  form.addEventListener('input', event => event.target.setCustomValidity?.(''));
+  form.addEventListener('reset', resetState);
+  form.ownerDocument.defaultView?.addEventListener('pageshow', resetState);
 
-  form.addEventListener('input', event => {
-    event.target.setCustomValidity?.('');
-  });
-
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    if (pending) return;
-    // Native required/email constraints also apply to the no-JavaScript POST.
-    if (typeof form.reportValidity === 'function' && !form.reportValidity()) return;
+  form.addEventListener('submit', event => {
+    if (pending) {
+      event.preventDefault();
+      return;
+    }
     for (const id of ['contact-name', 'contact-message']) {
       const field = form.querySelector('#' + id);
-      if (!field?.value.trim()) {
+      if (!field || !field.value.trim()) {
+        event.preventDefault();
         field?.setCustomValidity('Vul dit veld in.');
         field?.reportValidity?.();
         field?.focus();
         return;
       }
     }
-    if (form.querySelector('[name="_honey"]')?.value) return;
-
-    const payload = {};
-    for (const input of form.querySelectorAll('input[name], select[name], textarea[name]')) {
-      if (input.disabled || ['submit', 'button', 'file'].includes(input.type)) continue;
-      if (['checkbox', 'radio'].includes(input.type) && !input.checked) continue;
-      payload[input.name] = String(input.value).trim();
+    if (typeof form.reportValidity === 'function' && !form.reportValidity()) {
+      event.preventDefault();
+      return;
     }
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 25000);
-    status.hidden = true;
-    status.replaceChildren();
-    setPending(true);
-    try {
-      const response = await send(AJAX_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        credentials: 'omit',
-        referrerPolicy: 'strict-origin-when-cross-origin',
-        body: JSON.stringify(payload),
-        signal: controller.signal,
-      });
-      const data = await response.json();
-      if (!response.ok || !(data.success === true || data.success === 'true')) {
-        throw new Error('Submission was not accepted');
-      }
-      form.reset();
-      form.hidden = true;
-      success.hidden = false;
-      success.focus();
-    } catch (error) {
-      showError(error.name === 'AbortError'
-        ? 'We konden niet bevestigen of je bericht is verzonden. Probeer het later opnieuw.'
-        : 'Versturen is niet gelukt. Je ingevulde gegevens staan er nog; probeer het opnieuw.');
-    } finally {
-      clearTimeout(timeout);
-      setPending(false);
+    if (form.querySelector('[name="_honey"]')?.value) {
+      event.preventDefault();
+      return;
     }
-  });
-
-  again?.addEventListener('click', () => {
-    success.hidden = true;
-    form.hidden = false;
-    status.hidden = true;
-    form.querySelector('#contact-name')?.focus();
+    pending = true;
+    button.disabled = true;
+    label.textContent = 'Bericht versturen…';
+    form.setAttribute('aria-busy', 'true');
+    status.dataset.state = 'pending';
+    status.textContent = 'Je bericht wordt verstuurd. Rond een eventuele spamcontrole af; daarna kom je terug op onze website.';
+    status.hidden = false;
+    // Do not preventDefault: native POST supports the service's activation and CAPTCHA flow.
   });
 }
 

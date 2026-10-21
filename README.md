@@ -15,7 +15,7 @@ GitHub werkt bestanden met hetzelfde pad bij. Je hoeft de website niet eerst te 
 
 ## Eenmalig de mailontvangst activeren
 
-FormSubmit verstuurt formulierberichten naar onze Gmail. Je hebt geen PHP of eigen mailserver nodig.
+De browser verstuurt het formulier rechtstreeks naar FormSubmit. Deze route verzorgt ook de eventuele spamcontrole en de activering. Na een geslaagde verzending keert de bezoeker terug op onze bedankpagina. Onze eigen website draait nog steeds via GitHub Pages.
 
 1. Verstuur na de upload zelf een testbericht via de contactpagina.
 2. Open Kleinevleugels@gmail.com. Bij het eerste gebruik stuurt FormSubmit een activatiemail. Controleer ook de spammap.
@@ -26,17 +26,19 @@ FormSubmit vraagt geen nieuwe bevestiging wanneer de gebruikte combinatie al is 
 
 ## Wat ouders zien
 
-Het formulier vraagt om naam, e-mailadres en bericht, met een optioneel telefoonnummer en een keuze voor regio en onderwerp. Ouders zien na verzending een bevestiging op de website. Bij een verzendfout blijft de invoer staan en verschijnt een directe maillink. Het formulier bewaart geen gegevens in de browser. Zonder JavaScript gaat de verzending via de formulierdienst terug naar onze eigen bedankpagina.
+Het formulier vraagt om naam, e-mailadres en bericht, met een optioneel telefoonnummer en een keuze voor regio en onderwerp. Na klikken op Verstuur bericht gaat de browser naar FormSubmit. Daar kan een spamcontrole of activeringsbericht verschijnen. Na afronding komt de bezoeker terug op onze bedankpagina. Het formulier schrijft geen gegevens naar browseropslag. De normale formulierverzending werkt ook zonder JavaScript. Er staat daarnaast altijd een directe maillink op de contactpagina.
+
+De eerdere JavaScript-verzending kon na 25 seconden stoppen zonder antwoord van de formulierdienst. In deze versie verzendt JavaScript de gegevens niet meer: de browser verstuurt het formulier rechtstreeks. JavaScript controleert alleen de invoer en voorkomt dubbel klikken. Als je teruggaat naar het formulier wordt de verzendknop weer bruikbaar.
 
 De formulierdienst en de verwerking van contactgegevens staan op de bijgewerkte privacypagina. De bevestiging voor ouders staat op het scherm; een automatische ontvangstmail aan de ouder is in deze uitvoering niet ingesteld.
 
 ## Controle
 
-Pakketversie 11 - 21 oktober 2026. De verzending, foutafhandeling, bescherming tegen dubbel verzenden, formulierverwijzingen, benodigde velden en lokale bestanden zijn technisch gecontroleerd. De tien beleids-PDF’s, bestaande beelden, huisstijl en domeinkoppeling zijn meegenomen. Daadwerkelijke bezorging in Gmail moet met bovenstaande activatie en een testbericht door de mailboxeigenaar worden bevestigd. Een visuele browsertest is in de maakomgeving niet beschikbaar.
+Pakketversie 12 - 21 oktober 2026. De aangewezen stukken op de privacypagina zijn verwijderd. De normale POST-verzending, bescherming tegen dubbel verzenden, verplichte velden, terugkeer na navigatie en lokale bestanden zijn technisch gecontroleerd. De tien beleids-PDF’s, bestaande beelden, huisstijl en domeinkoppeling zijn meegenomen. De formulierdienst is vanuit de maakomgeving niet live te controleren; daadwerkelijke bezorging in Gmail moet na de upload met de activatie en een testbericht door de mailboxeigenaar worden bevestigd. Een visuele browsertest is in de maakomgeving niet beschikbaar.
 
 Deze ZIP wijzigt zelf niets in GitHub. De update wordt openbaar na jouw upload en een geslaagde Pages-publicatie.
 
 Officiële uitleg van de formulierdienst:
 https://formsubmit.co/
-https://formsubmit.co/ajax-documentation
+https://formsubmit.co/documentation
 https://formsubmit.co/help
