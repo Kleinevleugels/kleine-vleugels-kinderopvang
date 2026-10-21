@@ -15,7 +15,7 @@ GitHub werkt bestanden met hetzelfde pad bij. Je hoeft de website niet eerst te 
 
 ## Eenmalig de mailontvangst activeren
 
-De browser verstuurt het formulier rechtstreeks naar FormSubmit. Deze route verzorgt ook de eventuele spamcontrole en de activering. Na een geslaagde verzending keert de bezoeker terug op onze bedankpagina. Onze eigen website draait nog steeds via GitHub Pages.
+FormSubmit bezorgt de berichten op onze Gmail. De koppeling is op de aangeleverde screenshot bevestigd met een ontvangen testbericht. Als jullie adres al is geactiveerd, hoef je daarvoor geen account of nieuwe maildienst in te richten. De onderstaande stappen blijven nuttig bij een nieuwe activatie of controle.
 
 1. Verstuur na de upload zelf een testbericht via de contactpagina.
 2. Open Kleinevleugels@gmail.com. Bij het eerste gebruik stuurt FormSubmit een activatiemail. Controleer ook de spammap.
@@ -26,15 +26,17 @@ FormSubmit vraagt geen nieuwe bevestiging wanneer de gebruikte combinatie al is 
 
 ## Wat ouders zien
 
-Het formulier vraagt om naam, e-mailadres en bericht, met een optioneel telefoonnummer en een keuze voor regio en onderwerp. Na klikken op Verstuur bericht gaat de browser naar FormSubmit. Daar kan een spamcontrole of activeringsbericht verschijnen. Na afronding komt de bezoeker terug op onze bedankpagina. Het formulier schrijft geen gegevens naar browseropslag. De normale formulierverzending werkt ook zonder JavaScript. Er staat daarnaast altijd een directe maillink op de contactpagina.
+Het formulier vraagt om naam, e-mailadres en bericht, met een optioneel telefoonnummer en een keuze voor regio en onderwerp. Bij bevestigde verwerking opent de website onze nieuwe Nederlandstalige bedankpagina, met het gekozen logo, crème achtergrond, groene accenten en duidelijke vervolgknoppen. Die staat op docs/bedankt.html en blijft ook via /contact/bedankt/ bereikbaar.
 
-De eerdere JavaScript-verzending kon na 25 seconden stoppen zonder antwoord van de formulierdienst. In deze versie verzendt JavaScript de gegevens niet meer: de browser verstuurt het formulier rechtstreeks. JavaScript controleert alleen de invoer en voorkomt dubbel klikken. Als je teruggaat naar het formulier wordt de verzendknop weer bruikbaar.
+De verzending in de achtergrond gebruikt normale formuliergegevens, zodat de browser geen extra aanvraag voor JSON-toestemming hoeft te doen. We tonen de bevestiging uitsluitend na een positief antwoord van de formulierdienst. Een mislukte of onbevestigde verzending wist de invoer niet en toont een extra knop om via de normale formulierpagina te versturen. Er wordt nooit automatisch opnieuw verzonden. Zonder JavaScript blijft de gewone formulierverzending beschikbaar, met eventuele spamcontrole. Het formulier schrijft geen gegevens naar browseropslag. Op de contactpagina staat altijd een directe maillink.
+
+Na de upload controleren we met een testbericht of de vernieuwde route op jouw browser de eigen bedankpagina opent en de mail in Gmail aankomt. De oude blauwe tabel is vervangen door het vaste FormSubmit-sjabloon box. Dat toont de gegevens in losse vakken. FormSubmit biedt alleen basic, table en box: de afzender, dienstteksten en sjabloonkleuren zijn daarmee niet volledig in onze eigen huisstijl te zetten.
 
 De formulierdienst en de verwerking van contactgegevens staan op de bijgewerkte privacypagina. De bevestiging voor ouders staat op het scherm; een automatische ontvangstmail aan de ouder is in deze uitvoering niet ingesteld.
 
 ## Controle
 
-Pakketversie 12 - 21 oktober 2026. De aangewezen stukken op de privacypagina zijn verwijderd. De normale POST-verzending, bescherming tegen dubbel verzenden, verplichte velden, terugkeer na navigatie en lokale bestanden zijn technisch gecontroleerd. De tien beleids-PDF’s, bestaande beelden, huisstijl en domeinkoppeling zijn meegenomen. De formulierdienst is vanuit de maakomgeving niet live te controleren; daadwerkelijke bezorging in Gmail moet na de upload met de activatie en een testbericht door de mailboxeigenaar worden bevestigd. Een visuele browsertest is in de maakomgeving niet beschikbaar.
+Pakketversie 13 - 21 oktober 2026. De eigen bedankpagina, mailtemplate-instelling, lokale bestanden en de verzendlogica zijn technisch gecontroleerd. De eerder verwijderde privacystukken blijven verwijderd. De tien beleids-PDF’s, bestaande beelden, huisstijl en domeinkoppeling zijn meegenomen. De vernieuwde verzendroute moet na de upload met een testbericht worden gecontroleerd. Een visuele browsertest is in de maakomgeving niet beschikbaar.
 
 Deze ZIP wijzigt zelf niets in GitHub. De update wordt openbaar na jouw upload en een geslaagde Pages-publicatie.
 
