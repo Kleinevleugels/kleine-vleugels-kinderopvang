@@ -1,50 +1,42 @@
-# Kleine Vleugels Kinderopvang — complete website voor GitHub
+# Kleine Vleugels - website met contactformulier
 
-Dit pakket bevat de volledige openbare website. De map `docs` bevat alle pagina’s, JavaScript, stijlen, lettertypen, afbeeldingen en tien beleidsdownloads als opgemaakte PDF. Je kunt alles uit deze ZIP in één keer uploaden.
+Dit is de volledige website voor GitHub Pages: alle pagina’s, afbeeldingen, lettertypen, JavaScript en tien beleids-PDF’s. De tekst “AI-sfeerbeeld ter illustratie” is overal uit de webpagina’s verwijderd. Ouders kunnen een bericht sturen naar Kleinevleugels@gmail.com.
 
-## Uploaden vanaf het scherm met de repositorybestanden
+## Uploaden
 
-1. Pak de ZIP uit op je computer en open de uitgepakte map.
-2. Daar zie je precies twee onderdelen: de map **docs** en dit bestand **README.md**.
-3. Open https://github.com/KleineVleugels/kleine-vleugels-kinderopvang en ga naar **Code**, op het hoogste niveau van de repository. Je ziet daar bijvoorbeeld `package.json` en de mappen `app`, `public` en `docs`.
-4. Kies **Add file > Upload files**. Sleep **docs én README.md samen** naar het uploadvak. Sleep niet het ZIP-bestand en niet de bovenliggende uitgepakte map.
-5. Controleer in de uploadlijst dat je onder andere `docs/index.html`, `docs/beleid/index.html`, `docs/assets/interactief.js` en `docs/CNAME` ziet. Het mag geen `docs/docs/index.html` of extra map met de naam van de ZIP worden.
-6. Schrijf als omschrijving bijvoorbeeld **PDF-beleidsstukken en leesbare downloadknoppen**. Kies **Commit directly to main** en klik **Commit changes**.
-7. Open **Actions** en wacht op een geslaagde Pages-publicatie.
-8. Open https://kleinevleugels.nl/beleid/ en druk op **Ctrl + F5**. Open een beleidsstuk en klik op **Download PDF**. Het document bevat het logo, de huisstijl en paginanummers.
+1. Pak de ZIP uit.
+2. Open https://github.com/KleineVleugels/kleine-vleugels-kinderopvang op het tabblad Code, op het hoogste niveau.
+3. Kies Add file > Upload files. Sleep docs en README.md samen naar het uploadvak, zonder de bovenliggende map of het ZIP-bestand.
+4. Je moet paden als docs/index.html en docs/contact/index.html zien, niet docs/docs/index.html.
+5. Kies Commit directly to main en Commit changes. Wacht tot de Pages-publicatie onder Actions is geslaagd.
+6. Open https://kleinevleugels.nl/contact/ en ververs met Ctrl + F5.
 
-## Instellingen behouden
+GitHub werkt bestanden met hetzelfde pad bij. Je hoeft de website niet eerst te verwijderen. Settings > Pages blijft main /docs. Het eigen domein blijft kleinevleugels.nl en HTTPS blijft aan.
 
-**Settings > Pages** blijft: **Deploy from a branch**, branch **main**, folder **/docs**. Het eigen domein blijft **kleinevleugels.nl** en **Enforce HTTPS** blijft aan. De domeinkoppeling staat ook in `docs/CNAME`; dat bestand wordt meegeüpload. DNS en Google Search Console hoef je voor deze update niet opnieuw in te stellen.
+## Eenmalig de mailontvangst activeren
 
-## Waarom alleen docs de website bepaalt
+FormSubmit verstuurt formulierberichten naar onze Gmail. Je hebt geen PHP of eigen mailserver nodig.
 
-De andere mappen zijn bronbestanden van de eerdere ontwikkelversie. Bij publicatie uit `main /docs` gebruikt GitHub Pages de inhoud van `docs` voor de website. De nieuwe map is dus geen gedeeltelijke update: alle onderdelen van de openbare website zitten erin. De andere mappen kunnen blijven staan. Deze ZIP actualiseert de openbare website, niet de oorspronkelijke ontwikkelcode buiten docs.
+1. Verstuur na de upload zelf een testbericht via de contactpagina.
+2. Open Kleinevleugels@gmail.com. Bij het eerste gebruik stuurt FormSubmit een activatiemail. Controleer ook de spammap.
+3. Klik in die e-mail op de bevestiging, meestal Activate Form of Confirm your email. Alleen de eigenaar van deze mailbox kan dit afronden.
+4. Verstuur daarna nog een testbericht en controleer of de inhoud in Gmail verschijnt. Via Beantwoorden reageer je op het ingevulde e-mailadres.
 
-Bestanden met hetzelfde pad worden bij upload bijgewerkt. Bestanden die je niet opnieuw uploadt, worden niet automatisch gewist. Dit pakket bevat ook `docs/images/samen-ontdekken.webp`: onder die oude bestandsnaam staat nu een verliesloos omgezet exemplaar van het nieuwe AI-sfeerbeeld. Zo wordt ook de oude afbeelding overschreven en hoef je die niet apart te verwijderen.
+FormSubmit vraagt geen nieuwe bevestiging wanneer de gebruikte combinatie al is geactiveerd. Controleer in dat geval direct het testbericht. Tot de bevestiging kunnen berichten bij de formulierdienst in afwachting blijven staan; beschouw de koppeling daarom pas als actief na de controle in Gmail.
 
-## Inhoud en werking
+## Wat ouders zien
 
-- Alle tien beleidsstukken en bijpassende PDF-downloads met logo, huisstijl, paginanummers en navigeerbare hoofdstukken. De eerdere tekstbestanden blijven beschikbaar voor bestaande links.
-- Groene downloadknoppen met goed leesbare witte tekst en een wit downloadpictogram.
-- De drie leeftijdsgroepen: baby’s 0–1 jaar, dreumesen 1–2 jaar en peuters 2–4 jaar.
-- Afgestemde teksten over wennen, mentorschap, twee ontwikkelingsgesprekken per jaar, slaap en rust, verzorging, voeding, veiligheid, privé-updates, klachten en ophalen.
-- Mobiel menu, leeftijdstabs, dagritme met pijlen en toetsenbordbediening, zoekfuncties, filters, downloads en bruto rekentool.
-- Het gekozen vogellogo, de bestaande kleuren en lettertypen.
-- Het nieuwe AI-sfeerbeeld, zichtbaar als illustratie aangeduid, zonder echte kindfoto’s als invoer.
-- Het eigen domein, relatieve paden, sitemap en zoekmachine-instellingen.
+Het formulier vraagt om naam, e-mailadres en bericht, met een optioneel telefoonnummer en een keuze voor regio en onderwerp. Ouders zien na verzending een bevestiging op de website. Bij een verzendfout blijft de invoer staan en verschijnt een directe maillink. Het formulier bewaart geen gegevens in de browser. Zonder JavaScript gaat de verzending via de formulierdienst terug naar onze eigen bedankpagina.
 
-Het aanmeldformulier en de automatische ontvangstmail zijn nog niet aangesloten. De rekentool gebruikt een aanpasbaar voorbeeldtarief. Menu, tariefinclusies, openingsweken en een eventuele vergoeding bij herhaald te laat ophalen blijven open. Adres, openingsdatum, capaciteit en registratie moeten nog worden bevestigd.
+De formulierdienst en de verwerking van contactgegevens staan op de bijgewerkte privacypagina. De bevestiging voor ouders staat op het scherm; een automatische ontvangstmail aan de ouder is in deze uitvoering niet ingesteld.
 
-## Controle en status
+## Controle
 
-Update 21 oktober 2026, pakketversie 9. Gebaseerd op de actuele openbare GitHub-versie van de website. Alle tien volledige beleidsteksten zijn vergeleken met de PDF's. Alle 21 PDF-pagina's zijn gerenderd en visueel gecontroleerd; ook de hoofdstuknavigatie en paginanummers zijn gecontroleerd. De downloadlinks, 572 relatieve bestandsverwijzingen, domeininstellingen en ZIP-integriteit zijn gecontroleerd. De downloadknoppen hebben minimaal 5,85:1 contrast tussen witte tekst en groene achtergrond. De CSS-regels zijn technisch gecontroleerd voor mobiel en desktop, inclusief hover, toetsenbordfocus en bezochte links. Een visuele browsertest van de website was in de maakomgeving niet beschikbaar.
+Pakketversie 11 - 21 oktober 2026. De verzending, foutafhandeling, bescherming tegen dubbel verzenden, formulierverwijzingen, benodigde velden en lokale bestanden zijn technisch gecontroleerd. De tien beleids-PDF’s, bestaande beelden, huisstijl en domeinkoppeling zijn meegenomen. Daadwerkelijke bezorging in Gmail moet met bovenstaande activatie en een testbericht door de mailboxeigenaar worden bevestigd. Een visuele browsertest is in de maakomgeving niet beschikbaar.
 
-De vastgestelde inhoud is voor deze opmaakupdate niet herschreven. Logo, foto's, lettertypen, JavaScript en bestaande instellingen komen uit de opgehaalde websiteversie.
+Deze ZIP wijzigt zelf niets in GitHub. De update wordt openbaar na jouw upload en een geslaagde Pages-publicatie.
 
-Dit pakket uploadt of verwijdert zelf niets in je GitHub-account. De wijzigingen worden pas openbaar na jouw upload en een geslaagde Pages-publicatie.
-
-## Officiële GitHub-uitleg
-
-- https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
-- https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+Officiële uitleg van de formulierdienst:
+https://formsubmit.co/
+https://formsubmit.co/ajax-documentation
+https://formsubmit.co/help
