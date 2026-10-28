@@ -1,0 +1,10 @@
+/* Homepage: brede uitsnede met kinderen en begeleider samen in beeld. */
+.hero-photo.hero-photo--home { height: auto; aspect-ratio: 4 / 3; border-radius: 32px; }
+.hero-photo--home img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 100% 50%; }
+.hero-visual--home::before { border-radius: 36px; }
+.hero-visual--home .floating-note { bottom: -10px; left: 10px; }
+@media (max-width: 600px) {
+ .hero-photo.hero-photo--home { border-radius: 24px; }
+ .hero-visual--home::before { border-radius: 28px; }
+ .hero-visual--home .floating-note { bottom: -12px; left: 17px; }
+}
